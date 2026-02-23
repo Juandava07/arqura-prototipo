@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arqura · Portal</title>
+  <meta name="description" content="Portal Arqura - prototipo con login por roles." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- SheetJS library for Excel export -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+  <!-- Fondo mármol luxury dinámico -->
+  <div class="marble-bg" aria-hidden="true"></div>
+
+  <!-- NAV principal -->
+  <nav>
+    <div class="container navbar">
+      <img src="assets/logo_arqura.jpg" alt="Arqura Logo" class="nav-logo" />
+
+      <div class="navlinks" id="navlinks"></div>
+
+      <div class="nav-spacer"></div>
+      <span id="roleBadge" class="role-badge" style="display:none"></span>
+      <button class="btn" id="logoutBtn" style="display:none">Cerrar sesión</button>
+    </div>
+  </nav>
+
+  <!-- Contenedor principal controlado por app.js -->
+  <main class="container" id="app"></main>
+
+  <!-- Toast de notificaciones -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Firebase SDK (Compat versions for easy global access) -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
