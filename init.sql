@@ -53,3 +53,15 @@ INSERT INTO settings (key, value) VALUES ('general', '{
     "email": "primoslopezylopez@gmail.com",
     "maps_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3342.035444978864!2d-75.53702651179289!3d5.043234488750755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e477b94500560b3%3A0x3d3273d72aaf5566!2sTransform%C3%A1rmoles%20y%20Granitos!5e0!3m2!1ses!2sco!4v1768441900249!5m2!1ses!2sco"
 }');
+
+-- Disable RLS for easy testing (Supabase enables this by default)
+ALTER TABLE products DISABLE ROW LEVEL SECURITY;
+ALTER TABLE orders DISABLE ROW LEVEL SECURITY;
+ALTER TABLE settings DISABLE ROW LEVEL SECURITY;
+ALTER TABLE content_about DISABLE ROW LEVEL SECURITY;
+
+-- Ensure anonymous access is granted
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE products TO anon;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE orders TO anon;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE settings TO anon;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE content_about TO anon;
